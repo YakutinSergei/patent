@@ -14,7 +14,11 @@ def create_driver():
     """Создаёт экземпляр веб-драйвера."""
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Уберите эту строку, если хотите видеть окна браузера
+    options.add_argument("--no-sandbox")  # Полезно для запуска в контейнерах
+    options.add_argument("--disable-dev-shm-usage")  # Устранение ограничений в Docker/WSL
+    options.add_argument(f"--user-data-dir=/tmp/chrome-user-data-{os.getpid()}")  # Уникальная папка для профиля
     return webdriver.Chrome(options=options)
+
 
 
 # Асинхронная функция для скачивания PDF
