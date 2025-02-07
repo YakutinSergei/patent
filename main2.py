@@ -65,6 +65,7 @@ async def fetch_pdf_links(links):
 
 # Основная функция обработки
 def main():
+    print('Запущено')
     driver = create_driver()
     with open("patent_links.txt", "w") as file:
         try:
