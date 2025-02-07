@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 def create_driver():
     """Создаёт экземпляр веб-драйвера."""
     options = webdriver.ChromeOptions()
-    #options.add_argument("--headless")  # Уберите эту строку, если хотите видеть окна браузера
+    options.add_argument("--headless")  # Уберите эту строку, если хотите видеть окна браузера
     return webdriver.Chrome(options=options)
 
 
